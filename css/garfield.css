@@ -1,0 +1,166 @@
+/*Fichier css utilisé pour la_queen.html*/
+
+
+h1{
+	text-align:center;
+	border-style:dashed;
+	border-color:black;
+	background-color:#ffa31a;
+	margin-bottom:0px;
+	
+}
+p{
+	margin-top:0;
+	margin-bottom:0;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+input {
+  width: 100%;
+
+}
+ul{
+	list-style-type:none;
+}
+#nomSite{
+	font-weight: bold;
+	font-size: 50px;
+}
+#ad{
+	float:right;
+	border:solid 2px black;
+	width:15%;
+}
+#sousGarfield{
+	border:dashed 5px black;
+	float:left;
+	width:15%;
+	text-align:center;
+	background-color:#ffa31a;
+	
+}
+#commentaire{
+	padding-top:15px;
+	padding-left:10px;
+	padding-right:10px;
+	font-size: 20px;
+	padding-bottom:10px;
+	border-bottom:solid 2px;
+	border-top:solid 2px;
+	border-left:solid 10px;
+	border-right:solid 10px;
+}
+#zonePublication{
+	background-color:#ffa31a;
+	width:60%;
+	margin-left:20%;
+	
+}
+#optionPublication{
+	background-color:#cc6600;
+	height:50px;
+	display:flex;
+}
+#holder{
+	background-color:#ffb84d;
+}
+#corps{}
+#barreOption{
+	background-color:#ffa31a;
+	height:35px;
+	width:100%;
+	margin-bottom:40px;
+	display:flex;
+	
+}
+.vert{
+	color:#00ff00;
+}
+.bleu{
+	color:#00ccff
+	
+}
+
+.titrePost{
+	font-size: 30px;
+	text-align:center;
+}
+.image{
+	padding-top:50px;
+	padding-bottom:50px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+}
+.imageAd{
+	width:100%;
+	
+}
+.auteurComment{
+	color:grey;
+	font-size:15px;
+	margin-top:10px;
+	
+
+}
+.texteComment{
+	padding-bottom:5px;
+	padding-left:30px;
+	border-bottom:solid 2px black;
+	
+}
+
+.garfieldChoisi{
+	background-color:#660066;
+	color:#ffffff;
+	padding-top:20px;
+	padding-bottom:20px;
+	border: solid 1px black;
+	
+}
+.nonChoisi{
+	padding-top:20px;
+	padding-bottom:20px;
+	border: solid 1px black;
+	
+}
+.optionsgauche{
+
+	border:solid 2px black;
+	background-color:#ff9933;
+	padding-left:25px;
+	padding-right:30px;
+}
+.optionsdroite{
+	margin-left:auto;
+	border:solid 2px black;
+	background-color:#ff9933;
+	padding-left:25px;
+	padding-right:30px;
+}
+.optionsdroite2{
+	border:solid 2px black;
+	background-color:#ff9933;
+	padding-left:25px;
+	padding-right:30px;
+}
+.textePost{
+	padding-left:20px;
+	
+}
+.auteurPost{
+	color:grey;
+}
+.jon{
+	background-color:#660066;
+}
+.garfield{
+	background-color:#D68717;
+}
+.nermal{
+	background-color:#666666;
+}
+.wholesome{
+	background-image:url("img/wallpapergarfield.png");
+	background-repeat:repeat-x repeat-y;
+}
