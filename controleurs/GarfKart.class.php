@@ -1,6 +1,5 @@
 <?php
     //----------------------------- INCLUSIONS
-	include_once(DOSSIER_BASE_INCLUDE."modele/DAO/administrateurDAO.class.php");
 	include_once(DOSSIER_BASE_INCLUDE."controleurs/controleur.abstract.class.php");
 
 	class GarfKart extends  Controleur {

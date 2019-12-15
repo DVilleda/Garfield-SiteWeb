@@ -1,5 +1,5 @@
 <?php
-	include_once(DOSSIER_BASE_INCLUDE."controleurs/seConnecter.class.php");
+
 	include_once(DOSSIER_BASE_INCLUDE."controleurs/seDeconnecter.class.php");
 	include_once(DOSSIER_BASE_INCLUDE."controleurs/defaut.class.php");
 	
