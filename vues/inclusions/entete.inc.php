@@ -1,9 +1,8 @@
-<div class="banniere">
-	<h1 class="gauche">
-		Entete 
-	</h1>
-	<a href="<?php echo DOSSIER_BASE_LIENS;?>/vues/pageAccueil.php">
-		<img class="droite" alt="logo" src="<?php echo DOSSIER_BASE_LIENS;?>/images/Garfield.jpg" height="80" /> 
-	</a>
-	<a class="droite itemConnexion" href="?action=seConnecter" > Connexion</a>
-</div>
+<div id="barreOption">
+		<a class="optionsgauche" href="?action=publier"><p> publier </p>
+		<a href="<?php echo DOSSIER_BASE_LIENS;?>/vues/pageAccueil.php" class="optionsgauche">
+			<img alt="logo" src="img/GarfieldCharacter.jpg" height="30" /> 
+		</a>
+		<a class="optionsdroite" href="?action=creerCompte"> <p>Créer un compte</p></a>
+		<a  class="optionsdroite2" href="?action=infoUser"><p>se connecter</p></a>
+	</div>

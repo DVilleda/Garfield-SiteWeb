@@ -12,14 +12,12 @@
 <script type="text/javascript" src="<?php echo DOSSIER_BASE_LIENS;?>/javascript/garfriend.js"></script>
 
 </head>
-<body onload="go()" id="corps" class="garfield">
-	
+<body class="garfield">	
+	<h1>PagePublier</h1>
 	<h1 id="nomSite" class="vert">Welcome to garfield and friends </h1>
-	
 	<?php
 		include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/entete.inc.php');
 	?>
-	
 	
 	<?php
 		include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/menu.inc.php');
@@ -39,8 +37,6 @@
 	<?php
 		include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/adSpace.inc.php');
 	?>
-
-		
-	</div>
+	
 </body>
 </html>

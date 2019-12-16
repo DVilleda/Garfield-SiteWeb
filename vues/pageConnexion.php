@@ -10,7 +10,7 @@
 <meta charset="utf-8" />
 <link rel='stylesheet' type='text/css' href='<?php echo DOSSIER_BASE_LIENS;?>/css/GarfieldCSS.css' />
 </head>
-<body >
+<body class="garfield">
 	<h1>PageConnexion</h1>
 	
 </body>

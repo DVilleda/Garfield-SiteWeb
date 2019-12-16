@@ -6,7 +6,7 @@
 </head>
 <body class="garfield">
 	
-	<h1>PageUser</h1>
+	<h1>PageNewUser</h1>
 	
 </body>
 </html>

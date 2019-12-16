@@ -15,16 +15,12 @@
 <body onload="go()" id="corps" class="garfield">
 	
 	<h1 id="nomSite" class="vert">Welcome to garfield and friends </h1>
-	
-	<div id="barreOption">
-		<p class="optionsgauche"> publier </p>
-		<a class="optionsdroite" href="<?php echo DOSSIER_BASE_LIENS;?>/vues/pageNewUsager.php"> <p>Créer un compte</p></a>
-		<a  class="optionsdroite2" href="<?php echo DOSSIER_BASE_LIENS;?>/vues/pageConnexion.php"><p>se connecter</p></a>
-	</div>
+	<?php
+		include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/entete.inc.php');
+	?>
 	
 	<?php
 		include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/menu.inc.php');
-		
 		//menu de categories
 		$tabOptions = [DOSSIER_BASE_LIENS."?action=Garfield||Basic Garfield Images||garfieldChoisi",
 		DOSSIER_BASE_LIENS."?action=SorryJon||I'm sorry Jon||nonChoisi",
@@ -42,23 +38,30 @@
 		include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/adSpace.inc.php');
 	?>
 
+	
 	<div id="zonePublication">
-		<p class="titrePost">Ma première publication!!!<p>
-		<p class="textePost">Cette image est d'une grandiose beautée</p>
+		<?php
+			include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/publication.inc.php');
+			$tabImage = ["Ma première publication!!!||Cette image est d'une grandiose beautée||img/garfield.png||paulo_paul_paul"];	
+			afficherImage($tabImage);
+		?>
 		
-			
-		<img src="img/garfield.png" alt="The very pretty garfield" class="image">
-		<p class="auteurPost"> Publié par: paulo_paul_paul</p> 	
-		<div id="optionPublication">
-			<button class="optionsgauche" onclick="aimer()">Aimer</button>
-			<button class="optionsgauche"> Précédent </button>
-			<button class="optionsdroite"> suivant </button>	
-			<button class="optionsdroite2" onclick="signaler()">Signaler</button>
-		</div>
+		<?php 
+			include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/optionPost.inc.php');
+		?>
 		
 		<?php
 		include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/comments.inc.php');
-	?>
+		?>
+		<div id="commentaire">
+			<?php 
+			include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/functionComments.inc.php');
+				$tabComments = ["paulo_paul_paul||Bonjour, j'aime beaucoup trop votre publication",
+				"jean||GarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfield<br>GarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfield",
+				"walter||walter"];
+				afficherCommentaires($tabComments);
+			?>
+		</div>
 		
 	</div>
 </body>

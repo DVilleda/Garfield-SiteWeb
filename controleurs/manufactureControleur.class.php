@@ -11,6 +11,9 @@
 	include_once(DOSSIER_BASE_INCLUDE."controleurs/Nermal.class.php");
 	include_once(DOSSIER_BASE_INCLUDE."controleurs/Garfriend.class.php");
 	include_once(DOSSIER_BASE_INCLUDE."controleurs/GarfKart.class.php");
+	include_once(DOSSIER_BASE_INCLUDE."controleurs/creerCompte.class.php");
+	include_once(DOSSIER_BASE_INCLUDE."controleurs/infoUser.class.php");
+	include_once(DOSSIER_BASE_INCLUDE."controleurs/Publier.class.php");
 	
 	class ManufactureControleur {
 		//  Méthode qui crée une instance du controleur associé à l'action
@@ -33,6 +36,12 @@
 				$controleur = new GarfKart();
 			} elseif ($action == "EZCOOL") {
 				$controleur = new EZCool();
+			} elseif ($action == "creerCompte") {
+				$controleur = new CreerCompte();
+			} elseif ($action == "infoUser") {
+				$controleur = new InfoUser();
+			} elseif ($action == "publier") {
+				$controleur = new Publier();
 			} else {
 				$controleur = new Defaut();
 			}
