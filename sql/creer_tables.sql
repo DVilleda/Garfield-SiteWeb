@@ -1,12 +1,11 @@
 CREATE DATABASE ProjetFinal DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 CREATE TABLE images (
-	id 			INT AUTO_INCREMENT,
+	id 			INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	url 		VARCHAR(255),
 	titre_image VARCHAR(255) NOT NULL,
 	pointage 	INT,
-	categorie_id INT,
-	CONSTRAINT PK_idimages PRIMARY KEY (id)
+	categorie_id INT
 );
 
 CREATE TABLE usager (

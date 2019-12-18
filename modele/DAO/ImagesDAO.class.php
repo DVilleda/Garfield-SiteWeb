@@ -70,8 +70,8 @@
 				} catch (Exception $e){
 					throw new Exception ("Impossible d’obtenir la connexion à la BD.");
 				}
-				$requete = $connexion->prepare("INSERT INTO images (id,url,titre_image,pointage,categorie_id) VALUES (?,?,?,?,?)");
-				return $requete-> execute(array($uneImage->getID(), $uneImage->getUrl(), $uneImage->getTitre(), $uneImage->getPointage(), $uneImage->getCategorie()));
+				$requete = $connexion->prepare("INSERT INTO images (id,url,titre_image,pointage,categorie_id) VALUES (NULL,?,?,?,?)");
+				return $requete-> execute(array($uneImage->getUrl(), $uneImage->getTitre(), $uneImage->getPointage(), $uneImage->getCategorie()));
 				ConnexionBD::close();
 			}
 

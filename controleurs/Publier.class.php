@@ -21,7 +21,7 @@
 			
 			$valide = $this->validerPOST();
 			if ($valide) {
-				$uneImage = new Image((int)$_POST['numero'], $_POST['url'], $_POST['titre'], (int)$_POST['categorie']);
+				$uneImage = new Image((int)$_POST['numero'], $_POST['url'], $_POST['titre'],0, (int)$_POST['categorie']);
 				if ($_POST['operation'] == "inserer") {
 					ImagesDAO::inserer($uneImage);
 				} elseif ($_POST['operation'] == "supprimer")  {
@@ -40,7 +40,7 @@
 			if (! ISSET($_POST['numero']) || ! ISSET($_POST['titre']) || ! ISSET($_POST['url'])) {
 				$valide = false;
 			} else  {
-					if ($_POST['numero'] == "" || $_POST['titre'] == "") {
+					if ($_POST['numero'] == "" || $_POST['titre'] == "" || $_POST['url'] == "") {
 						$valide = false;
 					}
 			}

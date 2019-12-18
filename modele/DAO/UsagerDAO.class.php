@@ -96,10 +96,9 @@
 				} catch (Exception $e){
 					throw new Exception ("Impossible d’obtenir la connexion à la BD.");
 				}
-
-				$requete = $connexion->prepare($commandeSQL);
+				
+				$requete = $connexion->prepare("DELETE FROM usager where pseudonyme=?");
 				$requete->execute(array($unUsager->getPseudonyme()));
-				echo($commandeSQL);
 				return	$unUsager;
 				ConnexionBD::close();	
 			}
