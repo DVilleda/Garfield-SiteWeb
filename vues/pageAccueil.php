@@ -39,7 +39,19 @@
 	<?php
 		include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/adSpace.inc.php');
 	?>
-
+	<?php
+	include_once(DOSSIER_BASE_INCLUDE."vues/inclusions/affichage_erreurs.inc.php");
+				if (count($controleur->getMessagesErreur()) != 0) {
+					afficherListeErreurs($controleur->getMessagesErreur());
+				}
+				if ($controleur->getActeur() == "administrateur") {
+					echo "<p>Vous êtes connecté en tant que ".$_SESSION['adminConnecte']."</p>";
+				}else if ($controleur->getActeur() == "usager") {
+					echo "<p>Vous êtes connecté en tant que ".$_SESSION['usagerConnecte']."</p>";
+				}else{
+					echo "<p>Vous n'êtes pas connecté</p>";
+				}
+			?>
 		
 	</div>
 </body>

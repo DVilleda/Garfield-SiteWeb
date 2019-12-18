@@ -14,6 +14,7 @@
 	}
 	$controleur = ManufactureControleur::creerControleur($action);
 	
+	
 	// Executer l'action et obtener le nom de la vue
 	$nomVue=$controleur->executerAction();
 	

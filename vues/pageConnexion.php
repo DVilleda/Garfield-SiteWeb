@@ -13,5 +13,13 @@
 <body class="garfield">
 	<h1>PageConnexion</h1>
 	
+			<?php
+				include_once(DOSSIER_BASE_INCLUDE."vues/inclusions/affichage_erreurs.inc.php");
+				if (count($controleur->getMessagesErreur()) != 0) {
+					afficherListeErreurs($controleur->getMessagesErreur());
+				}
+				include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/formulaireConnexionAdmin.inc.php');
+			?>
+	
 </body>
 </html>

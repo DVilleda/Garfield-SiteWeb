@@ -3,31 +3,31 @@
 	include_once(DOSSIER_BASE_INCLUDE."controleurs/controleur.abstract.class.php");
 
 	class Fiction extends  Controleur {
+		
+		// *******Attributs
+		private $image = array();
+		private $compteur =0;
 
 		// ******************* Constructeur vide
 		public function __construct() {
 			parent::__construct();
 		}
 		
+		// *******Fonction pour obtenir images
+		public function getImages() { return $this->image; }
+		public function getCompteur() { return $this->compteur; }
+		public function suivant() {$this->compteur ++;}
+		public function precedent() {$this->compteur += -1;}
+		
 		// ******************* Méthode exécuter action
 		public function executerAction() {
+			$filtre="WHERE categorie_id=4";
+			$this->image = ImagesDAO::chercherAvecFiltre($filtre);
+			
 			return "pageFiction";
 			
 		}
-		
-		private function validerPOST() {
-			$valide = true;
-			$listeParametres = ['numero_employe','prenom','nom','mot_passe'];
-			if (! ISSET($_POST['numero']) || ! ISSET($_POST['motPasse'])) {
-				$valide = false;
-			} else  {
-					if ($_POST['numero'] == "" || $_POST['motPasse'] == "") {
-						$valide = false;
-					}
-					
-			}
-			return $valide;
-		}
+
 	}	
 
 ?>

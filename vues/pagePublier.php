@@ -13,7 +13,6 @@
 
 </head>
 <body class="garfield">	
-	<h1>PagePublier</h1>
 	<h1 id="nomSite" class="vert">Welcome to garfield and friends </h1>
 	<?php
 		include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/entete.inc.php');
@@ -37,6 +36,11 @@
 	<?php
 		include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/adSpace.inc.php');
 	?>
+	<?php
+		include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/formulairePublier.inc.php');
+	?>
+	
+	
 	
 </body>
 </html>

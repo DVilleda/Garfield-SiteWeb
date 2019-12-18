@@ -3,7 +3,10 @@
 	include_once(DOSSIER_BASE_INCLUDE."controleurs/controleur.abstract.class.php");
 
 	class Publier extends  Controleur {
-
+		
+		// *******Attributs
+		private $uneImage = null;
+		
 		// ******************* Constructeur vide
 		public function __construct() {
 			parent::__construct();
@@ -11,20 +14,33 @@
 		
 		// ******************* Méthode exécuter action
 		public function executerAction() {
+			if ($this->getActeur() == "visiteur") {
+				array_push($this->messagesErreur,"Vous devez vous connecter.");
+				return "pageConnexion";
+			}
+			
+			$valide = $this->validerPOST();
+			if ($valide) {
+				$uneImage = new Image((int)$_POST['numero'], $_POST['url'], $_POST['titre'], (int)$_POST['categorie']);
+				if ($_POST['operation'] == "inserer") {
+					ImagesDAO::inserer($uneImage);
+				} elseif ($_POST['operation'] == "supprimer")  {
+					ImagesDAO::supprimer($uneImage);
+				}
+			}
 			return "pagePublier";
 			
 		}
 		
 		private function validerPOST() {
 			$valide = true;
-			$listeParametres = ['numero_employe','prenom','nom','mot_passe'];
-			if (! ISSET($_POST['numero']) || ! ISSET($_POST['motPasse'])) {
+			$listeParametres = ['id','url','titre_image','pointage','categorie_id'];
+			if (! ISSET($_POST['numero']) || ! ISSET($_POST['titre']) || ! ISSET($_POST['url'])) {
 				$valide = false;
 			} else  {
-					if ($_POST['numero'] == "" || $_POST['motPasse'] == "") {
+					if ($_POST['numero'] == "" || $_POST['titre'] == "") {
 						$valide = false;
 					}
-					
 			}
 			return $valide;
 		}

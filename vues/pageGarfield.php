@@ -42,23 +42,30 @@
 	<div id="zonePublication">
 		<?php
 			include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/publication.inc.php');
-			$tabImage = ["Ma première publication!!!||Cette image est d'une grandiose beautée||img/garfield.png||paulo_paul_paul"];	
+			$tabImage = [];	
+			$tabDAO = $controleur->getImages();
+			for($i=0;$i<count($tabDAO); $i++){
+				array_push($tabImage,$tabDAO[$i]->__toString());
+			}
 			afficherImage($tabImage);
 		?>
 		
-		<?php 
-			include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/optionPost.inc.php');
-		?>
 		
-		<?php
-		include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/comments.inc.php');
-		?>
+		<div id='optionPublication'>
+			<button class='optionsgauche' onclick='aimer()'>Aimer</button>
+			<button class='optionsgauche'> Précédent </button>
+			<button class='optionsdroite'> suivant </button>
+			<button class='optionsdroite2' onclick='signaler()'>Signaler</button>
+		</div>
+		
 		<div id="commentaire">
 			<?php 
 			include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/functionComments.inc.php');
-				$tabComments = ["paulo_paul_paul||Bonjour, j'aime beaucoup trop votre publication",
-				"jean||GarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfield<br>GarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfield",
-				"walter||walter"];
+				$tabComments = [];
+				$tabDAOComs = $controleur->getComments();
+				for($i=0;$i<count($tabDAOComs); $i++){
+				array_push($tabComments,$tabDAOComs[$i]->__toString());
+			}
 				afficherCommentaires($tabComments);
 			?>
 		</div>

@@ -1,6 +1,7 @@
 <?php
 
 	include_once(DOSSIER_BASE_INCLUDE."controleurs/seDeconnecter.class.php");
+	include_once(DOSSIER_BASE_INCLUDE."controleurs/seConnecter.class.php");
 	include_once(DOSSIER_BASE_INCLUDE."controleurs/defaut.class.php");
 	
 	include_once(DOSSIER_BASE_INCLUDE."controleurs/BasicGarfield.class.php");
@@ -14,6 +15,7 @@
 	include_once(DOSSIER_BASE_INCLUDE."controleurs/creerCompte.class.php");
 	include_once(DOSSIER_BASE_INCLUDE."controleurs/infoUser.class.php");
 	include_once(DOSSIER_BASE_INCLUDE."controleurs/Publier.class.php");
+	include_once(DOSSIER_BASE_INCLUDE."controleurs/ImageFull.class.php");
 	
 	class ManufactureControleur {
 		//  Méthode qui crée une instance du controleur associé à l'action
@@ -38,10 +40,16 @@
 				$controleur = new EZCool();
 			} elseif ($action == "creerCompte") {
 				$controleur = new CreerCompte();
+			} elseif ($action == "connexion") {
+				$controleur = new SeConnecter();
+			} elseif ($action == "deconnexion") {
+				$controleur = new SeDeconnecter();
 			} elseif ($action == "infoUser") {
 				$controleur = new InfoUser();
 			} elseif ($action == "publier") {
 				$controleur = new Publier();
+			}  elseif (strpos($action,"imageFull") !== false) {
+				$controleur = new ImageFull();
 			} else {
 				$controleur = new Defaut();
 			}

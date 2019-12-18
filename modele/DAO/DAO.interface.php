@@ -1,6 +1,6 @@
 <?php
-		$dossierBase = $_SERVER['DOCUMENT_ROOT'].DOSSIER_RACINE;
-		include_once($dossierBase.'modele/DAO/connexionBD.class.php');
+		include_once(DOSSIER_BASE_INCLUDE."modele/DAO/config/configBD.interface.php");
+		include_once(DOSSIER_BASE_INCLUDE.'modele/DAO/connexionBD.class.php');
 
 		interface DAO {
 

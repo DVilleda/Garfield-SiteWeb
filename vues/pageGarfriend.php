@@ -13,7 +13,6 @@
 
 </head>
 <body class="garfield">
-	<h1>PageGarfriend</h1>
 	<h1 id="nomSite" class="vert">Welcome to garfield and friends </h1>
 	
 	<?php
@@ -38,5 +37,29 @@
 	<?php
 		include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/adSpace.inc.php');
 	?>
+	
+	<div id="zonePublication">
+		<?php
+			include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/publication.inc.php');
+			$tabImage = [];	
+			$tabDAO = $controleur->getImages();
+			for($i=0;$i<count($tabDAO); $i++){
+				array_push($tabImage,$tabDAO[$i]->__toString());
+			}
+			afficherImage($tabImage,$controleur->getCompteur());
+		?>
+		<?php 
+			include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/optionPost.inc.php');
+		?>
+		
+		<div id="commentaire">
+			<?php 
+			include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/functionComments.inc.php');
+				$tabComments = ["paulo_paul_paul||Bonjour, j'aime beaucoup trop votre publication",
+				"jean||GarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfield<br>GarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfield",
+				"walter||walter"];
+				afficherCommentaires($tabComments);
+			?>
+		</div>
 </body>
 </html>

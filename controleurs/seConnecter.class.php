@@ -1,6 +1,6 @@
 <?php
     //----------------------------- INCLUSIONS
-	include_once(DOSSIER_BASE_INCLUDE."modele/DAO/administrateurDAO.class.php");
+	include_once(DOSSIER_BASE_INCLUDE."modele/DAO/usagerDAO.class.php");
 	include_once(DOSSIER_BASE_INCLUDE."controleurs/controleur.abstract.class.php");
 
 	class SeConnecter extends  Controleur {
@@ -13,20 +13,25 @@
 		// ******************* Méthode exécuter action
 		public function executerAction() {
 			//----------------------------- VÉRIFIER LE TYPE D'ACTEUR -----------
-			if($this->getActeur() == "administrateur"){
+			if($this->getActeur() == "administrateur" || $this->getActeur() == "usager" ){
 				return "pageAccueil";
 			}
 			//----------------------------- VÉRIFIER LA VALIDITÉ DES POSTS ET SE CONNECTER AU BESOIN ------
 			$valide = $this->validerPOST();
+			
 			if($valide){
-				$numero = $_POST['numero'];
+				$pseudonyme = $_POST['pseudonyme'];
 				$motPasse = $_POST['motPasse'];
-				$admin = AdministrateurDAO::chercherParNumeroMotPasse($numero,$motPasse);
-				if(ISSET($admin)){
+				$usager = UsagerDAO::chercherParPseudoMotPasse($pseudonyme,$motPasse);
+				if(ISSET($usager) && $usager->getModerateur()=="Y"){
 					$this->acteur = "administrateur";
-					$_SESSION['adminConnecte']=$numero;
+					$_SESSION['adminConnecte']=$pseudonyme;
 					return "pageAccueil";
-				}else if(!ISSET($admin)){
+				}else if(ISSET($usager) && $usager->getModerateur()=="N"){
+					$this->acteur = "usager";
+					$_SESSION["usagerConnecte"]=$pseudonyme;
+					return "pageAccueil";
+				}else if(!ISSET($usager)){
 					array_push($this->messagesErreur,"Le mot passe et/ou le numéro d’employé sont invalides.");
 					return "pageConnexion";
 				}
@@ -39,11 +44,11 @@
 		
 		private function validerPOST() {
 			$valide = true;
-			$listeParametres = ['numero_employe','prenom','nom','mot_passe'];
-			if (! ISSET($_POST['numero']) || ! ISSET($_POST['motPasse'])) {
+			$listeParametres = ['pseudonyme','prenom','nom','mot_passe','moderateur','points'];
+			if (! ISSET($_POST['pseudonyme']) || ! ISSET($_POST['motPasse'])) {
 				$valide = false;
 			} else  {
-					if ($_POST['numero'] == "" || $_POST['motPasse'] == "") {
+					if ($_POST['pseudonyme'] == "" || $_POST['motPasse'] == "") {
 						$valide = false;
 					}
 					

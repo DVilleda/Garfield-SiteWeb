@@ -1,12 +1,13 @@
 <?php
     //----------------------------- INCLUSIONS
 	include_once(DOSSIER_BASE_INCLUDE."controleurs/controleur.abstract.class.php");
+	include_once(DOSSIER_BASE_INCLUDE."modele/DAO/ImagesDAO.class.php");
 
-	class SorryJon extends  Controleur {
-
+	class ImageFull extends  Controleur {
+		
 		// *******Attributs
 		private $image = array();
-		private $compteur =0;
+		private $id =1;
 
 		// ******************* Constructeur vide
 		public function __construct() {
@@ -15,18 +16,16 @@
 		
 		// *******Fonction pour obtenir images
 		public function getImages() { return $this->image; }
-		public function getCompteur() { return $this->compteur; }
-		public function suivant() {$this->compteur ++;}
-		public function precedent() {$this->compteur += -1;}
 		
 		// ******************* Méthode exécuter action
 		public function executerAction() {
-			$filtre="WHERE categorie_id=2";
+			$filtre="WHERE id=".$this->id;
 			$this->image = ImagesDAO::chercherAvecFiltre($filtre);
 			
-			return "pageSorryJon";
-			
+			return "pageImage";
 		}
+		
+	
 	}	
 
 ?>

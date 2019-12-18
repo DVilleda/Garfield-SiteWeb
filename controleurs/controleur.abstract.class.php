@@ -14,11 +14,6 @@
 		public function getActeur() { return $this->acteur;}
 
 		// ******************* Méthode abstraite executer action
-		// Cette méthode :
-		//  - gère la session (s'il y en a une)
-		//  - valide les données reçues en POST (s'il y en a)
-		//  - effectue le travail requis par l'action (interactions avec les DAO, ...)
-		//  - retourne le nom de la vue à appliquer (en format string, sans le chemin(path))
 		abstract public function executerAction();
 		
 		// ******************* Méthode qui détermine l'acteur en fonction des variables de session
@@ -26,7 +21,9 @@
 			session_start();
 			if(ISSET($_SESSION['adminConnecte'])){
 				$this->acteur = "administrateur";
-		}
+			}else if(ISSET($_SESSION['usagerConnecte'])){
+				$this->acteur = "usager";
+			}
 		}
 	}
 	
