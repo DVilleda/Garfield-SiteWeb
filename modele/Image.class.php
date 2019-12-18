@@ -20,6 +20,9 @@
 			public function getID(){return $this->id;}
 			public function getPointage(){return $this->pointage;}
 			public function getCategorie(){return $this->categorie;}
+			public function like(){
+				$this->pointage = $pointage++;
+			}
 			// Autre Methode
 
 			// Affichage

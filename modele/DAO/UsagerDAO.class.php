@@ -73,8 +73,8 @@
 					throw new Exception ("Impossible d’obtenir la connexion à la BD.");
 				}
 				$requete = $connexion->prepare("INSERT INTO usager (pseudonyme,prenom,nom,mot_passe,moderateur,points) VALUES (?,?,?,?,?,?)");
-				ConnexionBD::close();
 				return $requete-> execute(array($unUsager->getPseudonyme(), $unUsager->getPrenom(), $unUsager->getNom(), $unUsager->getMotPasse(),$unUsager->getModerateur(),$unUsager->getPoints()));
+				ConnexionBD::close();
 			}
 
 			static public function modifier($unUsager){

@@ -30,6 +30,7 @@
 			$filtre="WHERE id=".$this->image[0]->getCategorie();
 			$this->tabComments = CommentaireDAO::chercherAvecFiltre($filtre);
 			
+			//Faire un Commentaire
 			$valide = $this->validerPOST();
 			if($valide){
 				if($this->getActeur() == "usager"){
