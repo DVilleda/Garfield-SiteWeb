@@ -9,13 +9,13 @@
 			private $moderateur;
 
 			// Contructeur
-			public function __construct($pseudo,$prenom,$nom,$motPasse){
+			public function __construct($pseudo,$prenom,$nom,$motPasse,$moderateur){
 				$this->pseudonyme = $pseudo;
 				$this->prenom = $prenom;
 				$this->nom = $nom;
 				$this->motPasse = $motPasse;
 				$this->points = 0;
-				$this->moderateur ="N";
+				$this->moderateur =$moderateur;
 			}
 			// Accesseurs et mutateurs
 			public function getPseudonyme(){return $this->pseudonyme;}

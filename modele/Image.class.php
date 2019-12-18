@@ -7,7 +7,7 @@
 			private $pointage;
 			private $categorie;
 			// Constructeur
-			public function __construct($id,$url,$titre,$categorie){
+			public function __construct($id,$url,$titre,$pointage,$categorie){
 				$this->id = $id;
 				$this->url = $url;
 				$this->titre = $titre;

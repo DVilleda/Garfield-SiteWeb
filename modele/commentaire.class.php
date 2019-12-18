@@ -3,7 +3,6 @@
 			// Attributs
 			private $id;
 			private $commentaire;
-			private $pointage;
 			private $utilisateur;
 			// Constructeur
 			public function __construct($id,$commentaire,$utilisateur){
@@ -15,7 +14,6 @@
 			public function getCommentaire(){return $this->commentaire;}
 			public function getUtilisateur(){return $this->utilisateur;}
 			public function getID(){return $this->id;}
-			public function getPointage(){return $this->pointage;}
 			// Autre Methode
 
 			// Affichage

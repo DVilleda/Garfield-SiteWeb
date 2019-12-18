@@ -56,7 +56,7 @@
 			// Analyser les enristrements s'il y en a 
 				foreach ($requete as $enregistrement) {
 					$unUsager=new Usager($enregistrement['pseudonyme'], $enregistrement['prenom'], $enregistrement['nom'],
-									$enregistrement['mot_passe']);
+									$enregistrement['mot_passe'],"N");
 					array_push($liste, $unUsager);
 			}
 			// fermer le curseur de la requête et la connexion à la BD
@@ -97,10 +97,11 @@
 					throw new Exception ("Impossible d’obtenir la connexion à la BD.");
 				}
 
-				$commandeSQL = "DELETE FROM usager WHERE pseudonyme=".$unUsager->getPseudonyme();
 				$requete = $connexion->prepare($commandeSQL);
+				$requete->execute(array($unUsager->getPseudonyme()));
+				echo($commandeSQL);
+				return	$unUsager;
 				ConnexionBD::close();	
-				return	$requete->execute();
 			}
 
 			static public function chercherParPseudoMotPasse($unPseudo, $unMotPasse){

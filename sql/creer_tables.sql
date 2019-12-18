@@ -17,12 +17,14 @@ CREATE TABLE usager (
 	moderateur		CHAR(1),
 	points			INT UNSIGNED,
 	CONSTRAINT ch_moderateur CHECK (moderateur IN ('Y', 'N')),
-	CONSTRAINT PK_pseudonyme PRIMARY KEY (pseudonyme)
+	CONSTRAINT PK_pseudonyme PRIMARY KEY (pseudonyme) 
 );
 
 CREATE TABLE commentaires (
 	id 					INT,
 	commentaire 		VARCHAR(255),
 	usager_pseudonyme 	VARCHAR(255),
-	CONSTRAINT FK_usagerpseudo FOREIGN KEY (usager_pseudonyme) REFERENCES usager(pseudonyme)
+	numero 				INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	CONSTRAINT FK_usagerpseudo FOREIGN KEY (usager_pseudonyme) REFERENCES usager(pseudonyme) 
+	ON DELETE CASCADE
 );

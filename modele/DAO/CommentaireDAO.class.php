@@ -70,7 +70,7 @@
 				} catch (Exception $e){
 					throw new Exception ("Impossible d’obtenir la connexion à la BD.");
 				}
-				$requete = $connexion->prepare("INSERT INTO commentaires (id,commentaire,usager_pseudonyme) VALUES (?,?,?)");
+				$requete = $connexion->prepare("INSERT INTO commentaires (id,commentaire,usager_pseudonyme,numero) VALUES (?,?,?,NULL)");
 				ConnexionBD::close();
 				return $requete-> execute(array($unCommentaire->getID(), $unCommentaire->getCommentaire(), $unCommentaire->getUtilisateur()));
 			}

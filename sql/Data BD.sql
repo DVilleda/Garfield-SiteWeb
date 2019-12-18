@@ -13,9 +13,9 @@ Insert into images (url,titre_image,pointage,categorie_id) VALUES ("img/Ez.jpg",
 Insert into images (url,titre_image,pointage,categorie_id) VALUES ("img/gameplay.jpg","Garfield Kart Best Game",0,7);
 Insert into images (url,titre_image,pointage,categorie_id) VALUES ("img/ArleneComic.jpg","Garfield and Arlene",0,3);
 
-Insert into commentaires VALUES (1,"WOW Great ~~JOB~~!!!","Johnny");
-Insert into commentaires VALUES (2,"~~ :D ~~","dan");
-Insert into commentaires VALUES (3,"Very Nice","Dio");
-Insert into commentaires VALUES (1,"Nice Meme","Johnny");
-Insert into commentaires VALUES (2,"It's okay...","Dio");
+Insert into commentaires VALUES (1,"WOW Great ~~JOB~~!!!","Johnny",NULL);
+Insert into commentaires VALUES (1,"Nice Meme","Johnny",NULL);
+Insert into commentaires VALUES (2,"~~ :D ~~","dan",NULL);
+Insert into commentaires VALUES (3,"Very Nice","Dio",NULL);
+Insert into commentaires VALUES (2,"It's okay...","Dio",NULL);
 

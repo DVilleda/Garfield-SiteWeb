@@ -26,6 +26,8 @@
 					ImagesDAO::inserer($uneImage);
 				} elseif ($_POST['operation'] == "supprimer")  {
 					ImagesDAO::supprimer($uneImage);
+				}else{
+					array_push($this->messagesErreur,"Erreur dans la saisie des informations");
 				}
 			}
 			return "pagePublier";

@@ -46,18 +46,21 @@
 			for($i=0;$i<count($tabDAO); $i++){
 				array_push($tabImage,$tabDAO[$i]->__toString());
 			}
-			afficherImage($tabImage,$controleur->getCompteur());
-		?>
-		<?php 
-			include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/optionPost.inc.php');
+			afficherImage($tabImage);
 		?>
 		
-		<div id="commentaire">
+		<?php 
+				include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/comments.inc.php');
+			?>
+		
+			
 			<?php 
 			include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/functionComments.inc.php');
-				$tabComments = ["paulo_paul_paul||Bonjour, j'aime beaucoup trop votre publication",
-				"jean||GarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfield<br>GarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfieldGarfield",
-				"walter||walter"];
+				$tabComments = [];
+				$tabDAOComs = $controleur->getComments();
+				for($i=0;$i<count($tabDAOComs); $i++){
+				array_push($tabComments,$tabDAOComs[$i]->__toString());
+			}
 				afficherCommentaires($tabComments);
 			?>
 		</div>

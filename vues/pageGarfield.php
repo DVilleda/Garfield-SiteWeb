@@ -50,15 +50,10 @@
 			afficherImage($tabImage);
 		?>
 		
-		
-		<div id='optionPublication'>
-			<button class='optionsgauche' onclick='aimer()'>Aimer</button>
-			<button class='optionsgauche'> Précédent </button>
-			<button class='optionsdroite'> suivant </button>
-			<button class='optionsdroite2' onclick='signaler()'>Signaler</button>
-		</div>
-		
-		<div id="commentaire">
+			<?php 
+				include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/comments.inc.php');
+			?>
+			
 			<?php 
 			include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/functionComments.inc.php');
 				$tabComments = [];

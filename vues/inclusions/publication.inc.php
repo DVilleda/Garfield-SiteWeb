@@ -7,7 +7,7 @@
 			echo "<p class='textePost'> Num Image: #".$tab[1]."<p>";
 			echo "<img src='".$tab[2]."' class=image>";
 			echo "<p class='auteurPost'> Pointage:".$tab[3]."</p>";	 
-			echo "</a>";
+			echo "</a></br>";
 		}
 	}
 ?>

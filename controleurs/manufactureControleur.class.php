@@ -13,7 +13,7 @@
 	include_once(DOSSIER_BASE_INCLUDE."controleurs/Garfriend.class.php");
 	include_once(DOSSIER_BASE_INCLUDE."controleurs/GarfKart.class.php");
 	include_once(DOSSIER_BASE_INCLUDE."controleurs/creerCompte.class.php");
-	include_once(DOSSIER_BASE_INCLUDE."controleurs/infoUser.class.php");
+	include_once(DOSSIER_BASE_INCLUDE."controleurs/DeleteUser.class.php");
 	include_once(DOSSIER_BASE_INCLUDE."controleurs/Publier.class.php");
 	include_once(DOSSIER_BASE_INCLUDE."controleurs/ImageFull.class.php");
 	
@@ -44,12 +44,14 @@
 				$controleur = new SeConnecter();
 			} elseif ($action == "deconnexion") {
 				$controleur = new SeDeconnecter();
-			} elseif ($action == "infoUser") {
-				$controleur = new InfoUser();
+			} elseif ($action == "modPower") {
+				$controleur = new DeleteUser();
 			} elseif ($action == "publier") {
 				$controleur = new Publier();
 			}  elseif (strpos($action,"imageFull") !== false) {
-				$controleur = new ImageFull();
+				$url = $action;
+				preg_replace("/[^0-9]/",'AA', $url);
+				$controleur = new ImageFull($url);
 			} else {
 				$controleur = new Defaut();
 			}

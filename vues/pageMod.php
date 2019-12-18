@@ -6,24 +6,25 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<title>ProjetFinal: Garfield</title>
+<title>Projet Final:Garfield</title>
 <meta charset="utf-8" />
 <link rel='stylesheet' type='text/css' href='<?php echo DOSSIER_BASE_LIENS;?>/css/garfield.css' />
 <script type="text/javascript" src="<?php echo DOSSIER_BASE_LIENS;?>/javascript/garfriend.js"></script>
-
 </head>
-<body class="jon">
+<body onload="go()" id="corps" class="garfield">
+	
 	<h1 id="nomSite" class="vert">Welcome to garfield and friends </h1>
 	
 	<?php
 		include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/entete.inc.php');
 	?>
 	
+	
 	<?php
 		include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/menu.inc.php');
 		//menu de categories
 		$tabOptions = [DOSSIER_BASE_LIENS."?action=Garfield||Basic Garfield Images||nonChoisi",
-		DOSSIER_BASE_LIENS."?action=SorryJon||I'm sorry Jon||garfieldChoisi",
+		DOSSIER_BASE_LIENS."?action=SorryJon||I'm sorry Jon||nonChoisi",
 		DOSSIER_BASE_LIENS."?action=Garfriend||Garfriend||nonChoisi",
 		DOSSIER_BASE_LIENS."?action=Fiction||FanFiction||nonChoisi",
 		DOSSIER_BASE_LIENS."?action=Wholesome||Wholesome Garfield||nonChoisi",
@@ -37,32 +38,11 @@
 	<?php
 		include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/adSpace.inc.php');
 	?>
-	
-	<div id="zonePublication">
+
 		<?php
-			include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/publication.inc.php');
-			$tabImage = [];	
-			$tabDAO = $controleur->getImages();
-			for($i=0;$i<count($tabDAO); $i++){
-				array_push($tabImage,$tabDAO[$i]->__toString());
-			}
-			afficherImage($tabImage);
-		?>
+		include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/formulaireCensor.inc.php');
+	?>
 		
-		<?php 
-				include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/comments.inc.php');
-			?>
-		
-			
-			<?php 
-			include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/functionComments.inc.php');
-				$tabComments = [];
-				$tabDAOComs = $controleur->getComments();
-				for($i=0;$i<count($tabDAOComs); $i++){
-				array_push($tabComments,$tabDAOComs[$i]->__toString());
-			}
-				afficherCommentaires($tabComments);
-			?>
-		</div>
+	</div>
 </body>
 </html>

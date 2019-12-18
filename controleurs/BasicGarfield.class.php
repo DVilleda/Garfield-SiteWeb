@@ -9,7 +9,7 @@
 		// *******Attributs
 		private $image = array();
 		private $tabComments = array();
-		private $compteur =0;
+		private $comment=null;
 
 		// ******************* Constructeur vide
 		public function __construct() {
@@ -18,22 +18,43 @@
 		
 		// *******Fonction pour obtenir images
 		public function getImages() { return $this->image; }
-		public function getCompteur() { return $this->compteur; }
 		public function getComments() { return $this->tabComments; }
-		public function suivant() {$this->compteur ++;}
-		public function precedent() {$this->compteur += -1;}
+		public function setComment($unComment){$this->comment=$unComment;}
 		
 		// ******************* Méthode exécuter action
 		public function executerAction() {
+			
 			$filtre="WHERE categorie_id=1";
 			$this->image = ImagesDAO::chercherAvecFiltre($filtre);
 			$filtre="WHERE id=1";
 			$this->tabComments = CommentaireDAO::chercherAvecFiltre($filtre);
 			
+			$valide = $this->validerPOST();
+			if($valide){
+				if($this->getActeur() == "usager"){
+					$comment = new Commentaire(1,$_POST['comment'],$_SESSION['usagerConnecte']);
+					CommentaireDAO::inserer($comment);
+				}else if($this->getActeur() == "administrateur"){
+					$comment = new Commentaire(1,$_POST['comment'],$_SESSION['adminConnecte']);
+					CommentaireDAO::inserer($comment);
+				}
+			}
 			return "pageGarfield";
 		}
 		
-	
+		// ****************** Validation
+		private function validerPOST() {
+			$valide = true;
+			$listeParametres = ['id','commentaire','usager_pseudonyme'];
+			if (! ISSET($_POST['comment'])) {
+				$valide = false;
+			}else {
+				if($_POST['comment'] == "" ){
+					$valide = false;
+				}
+			}
+			return $valide;
+		}
 	}	
 
 ?>
