@@ -39,6 +39,7 @@
 	<?php
 		include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/adSpace.inc.php');
 	?>
+	
 	<?php
 	include_once(DOSSIER_BASE_INCLUDE."vues/inclusions/affichage_erreurs.inc.php");
 				if (count($controleur->getMessagesErreur()) != 0) {

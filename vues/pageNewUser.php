@@ -1,3 +1,8 @@
+<?php 
+	if (!ISSET($controleur)) {
+		header("Location: ../index.php");
+	}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
