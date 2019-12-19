@@ -46,13 +46,21 @@
 					afficherListeErreurs($controleur->getMessagesErreur());
 				}
 				if ($controleur->getActeur() == "administrateur") {
-					echo "<p>Vous êtes connecté en tant que ".$_SESSION['adminConnecte']."</p>";
+					echo "<h1>Vous êtes connecté en tant que ".$_SESSION['adminConnecte']."</h1>";
 				}else if ($controleur->getActeur() == "usager") {
-					echo "<p>Vous êtes connecté en tant que ".$_SESSION['usagerConnecte']."</p>";
+					echo "<h1>Vous êtes connecté en tant que ".$_SESSION['usagerConnecte']."</h1>";
 				}else{
-					echo "<p>Vous n'êtes pas connecté</p>";
+					echo "<h1>Vous n'êtes pas connecté</h1>";
 				}
 			?>
+			
+			<div id="zonePublication">
+		<?php
+			include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/home.inc.php');
+			$tabImage = ["Salut mes amis||Bienvenu dans mon album||img/hi.jpg"];	
+			afficherHi($tabImage);
+		?>
+		</div>
 		
 	</div>
 </body>

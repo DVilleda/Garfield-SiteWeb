@@ -1,20 +1,23 @@
 <h1>Publier ou Supprimer une Image</h1>
 <div id="zonePublication">
 	<form action="" method="post">
-		<label>Opération</label>
-		<input class="radio" type="radio" name="operation" value="inserer"   checked="checked">Inserer une image<br/>
-		<input class="radio" type="radio" name="operation" value="supprimer"                   >Supprimer une image<br/><br/>
+		<label>Opération: </label><br/><br/>
+		<label>Inserer une image</label>
+		<input type="radio" name="operation" value="inserer"   checked="checked"><br/>
+		<label>Supprimer une image</label>
+		<input type="radio" name="operation" value="supprimer"><br/>
 		
 		<label for="numero">Numéro de l'image</label>
-		<input id="numero"    name="numero"    type="text"     size="30" />
+		<input name="numero"    type="text"     size="30" /><br/>
 		
 		<label for="url">url de l'image</label>
-		<input id="url"    name="url"    type="text"     size="30" />
+		<input name="url"    type="text"     size="30" /><br/>
 		
 		<label for="titre">Titre de l'image</label>
-		<input id="titre"    name="titre"    type="text"     size="30" />
+		<input name="titre"    type="text"     size="30" /><br/>
 		
-		<select name="categorie" id="categorie">
+		<label>Catégorie: </label>
+		<select name="categorie">
 			<option value="1">Garfield</option>
 			<option value="2">Im Sorry Jon</option>
 			<option value="3">Garfriend</option>

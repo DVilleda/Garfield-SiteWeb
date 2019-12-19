@@ -12,7 +12,7 @@
 <script type="text/javascript" src="<?php echo DOSSIER_BASE_LIENS;?>/javascript/garfriend.js"></script>
 
 </head>
-<body class="nermal">
+<body onload="go()" id="corps" class="nermal">
 	<h1 id="nomSite" class="vert">Welcome to garfield and friends </h1>
 	
 	<?php

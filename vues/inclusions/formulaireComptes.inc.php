@@ -2,16 +2,17 @@
 <div id="zonePublication">
 	<form action="" method="post">
 		<label for="pseudonyme">Nom d'usager</label>
-		<input id="pseudonyme"    name="pseudonyme"    type="text"     size="30" />
+		<input name="pseudonyme"    type="text" size="30" /></br>
 		
 		<label for="prenom">Prénom</label>
-		<input id="prenom"    name="prenom"    type="text"     size="30" />
+		<input name="prenom"    type="text"     size="30" /></br>
 		
-		<label for="nom">Nom</label>
-		<input id="nom"       name="nom"       type="text"     size="30" />
+		<label for="nom">Nom</label></br>
+		<input name="nom"       type="text"     size="30" /></br>
 
 		<label for="mot_passe">Mot de passe</label>
-		<input id="mot_passe" name="mot_passe" type="password" size="30" />
+		<input name="mot_passe" type="password" size="30" /></br>
+		
 		<input type="Submit" value="Créer un compte" />
 	</form>	
 </div>

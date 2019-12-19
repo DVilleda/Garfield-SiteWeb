@@ -12,7 +12,7 @@
 <script type="text/javascript" src="<?php echo DOSSIER_BASE_LIENS;?>/javascript/garfriend.js"></script>
 
 </head>
-<body class="garfield">	
+<body onload="go()" id="corps" class="garfield">
 	<h1 id="nomSite" class="vert">Welcome to garfield and friends </h1>
 	<?php
 		include_once(DOSSIER_BASE_INCLUDE.'vues/inclusions/entete.inc.php');

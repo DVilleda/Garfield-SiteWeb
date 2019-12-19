@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<title>Projet Final:Garfield</title>
+<title>ProjetFinal: Garfield</title>
 <meta charset="utf-8" />
 <link rel='stylesheet' type='text/css' href='<?php echo DOSSIER_BASE_LIENS;?>/css/garfield.css' />
 <script type="text/javascript" src="<?php echo DOSSIER_BASE_LIENS;?>/javascript/garfriend.js"></script>
